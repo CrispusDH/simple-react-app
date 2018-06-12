@@ -1,5 +1,5 @@
 import React from 'react';
-import { Article } from './Article';
+import { ArticleList } from './ArticleList';
 import articles from '../articles';
 
 export class Application extends React.Component{
@@ -7,7 +7,7 @@ export class Application extends React.Component{
     return(
       <div>
         <h1>App name</h1>
-        <Article article={ articles[0] } />
+        <ArticleList articles={ articles } />
       </div>
     )
   }
