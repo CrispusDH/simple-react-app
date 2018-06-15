@@ -4,12 +4,22 @@ export class Article extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = new State(false);
+    this.state = new State(props.defaultOpen);
   }
 
   handleClick = () => {
     this.setState((state) =>  new State(!state.getIsOpen()) );
   };
+
+  componentWillMount() {
+
+  }
+
+  componentWillReceiveProps(props) {
+    if (props.defaultOpen !== this.props.defaultOpen) {
+      this.setState((state) => new State(props.defaultOpen))
+    }
+  }
 
   render() {
     const { article } = this.props;
